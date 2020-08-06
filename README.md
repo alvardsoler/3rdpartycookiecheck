@@ -14,17 +14,24 @@ example below:
   <script>
     var receiveMessage = function (evt) {
       if (evt.data === 'MM:3PCunsupported') {
-        console.log('thid party cookies are not supported');
+        console.log('third party cookies are not supported');
       } else if (evt.data === 'MM:3PCsupported') {
-        console.log('thid party cookies are supported');
+        console.log('third party cookies are supported');
       }
     };
     window.addEventListener("message", receiveMessage, false);
   </script>
 
-  <iframe src="LOCATION_OF_THE_SCRIPTS/start.html" />
+  <iframe src="LOCATION_OF_THE_SCRIPTS/start.html" style="display:none" />
 </body>
 ````
 
 It's also a good idea to set up a timeout that will automatically label third party cookies as unsupported if no recognised event comes back
 after a while, just in case network fails. 
+
+## Live example
+
+Thanks to github pages, the scripts are hosted already at https://mindmup.github.io/3rdpartycookiecheck/start.html -- so you can use that as a live
+version. For production, it's better to deploy somewhere under your control. 
+
+To see the client code in action, run this JSFiddle: https://jsfiddle.net/tugawg8y/
